@@ -1,0 +1,119 @@
+<svg fill="none" viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    :root {
+      --bg: #0d1117;
+      --stem: #2ea043;
+      --leaf: #3fb950;
+      --leaf-bright: #56d364;
+      --flower: #f0883e;
+      --text: #c9d1d9;
+      --text-sub: #8b949e;
+    }
+
+    @keyframes growStem {
+      0% { stroke-dashoffset: 400; }
+      100% { stroke-dashoffset: 0; }
+    }
+
+    @keyframes leafUnfold {
+      0% { transform: scale(0) rotate(-20deg); opacity: 0; }
+      60% { opacity: 0.5; }
+      100% { transform: scale(1) rotate(0deg); opacity: 1; }
+    }
+
+    @keyframes flowerBloom {
+      0% { transform: scale(0); opacity: 0; }
+      80% { transform: scale(1.2); opacity: 0.8; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes gentleSway {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(1.5deg); }
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { filter: drop-shadow(0 0 2px rgba(63, 185, 80, 0.3)); }
+      50% { filter: drop-shadow(0 0 8px rgba(86, 211, 100, 0.7)); }
+    }
+
+    .sway-group {
+      transform-origin: 400px 280px;
+      animation: gentleSway 6s infinite ease-in-out 3.5s;
+    }
+
+    .stem {
+      stroke: var(--stem);
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-dasharray: 400;
+      stroke-dashoffset: 400;
+      animation: growStem 2.5s ease-out forwards;
+    }
+
+    .leaf {
+      fill: var(--leaf);
+      transform-origin: center;
+      animation: leafUnfold 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards, pulseGlow 4s infinite ease-in-out 3.5s;
+      opacity: 0;
+    }
+
+    .leaf-left-1 { animation-delay: 1s, 3.5s; transform-origin: 390px 210px; }
+    .leaf-right-1 { animation-delay: 1.4s, 3.7s; transform-origin: 410px 180px; }
+    .leaf-left-2 { animation-delay: 1.8s, 3.9s; transform-origin: 395px 130px; }
+
+    .flower {
+      transform-origin: 400px 85px;
+      animation: flowerBloom 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+      animation-delay: 2.3s;
+      opacity: 0;
+    }
+
+    .pot {
+      fill: #21262d;
+      stroke: #30363d;
+      stroke-width: 2;
+    }
+
+    .soil {
+      fill: #342319;
+    }
+
+    .soil-top {
+      fill: #4a3225;
+    }
+  </style>
+
+  <rect width="100%" height="100%" fill="var(--bg)" rx="12" />
+
+  <!-- Soil & Pot -->
+  <g>
+    <path d="M 340 280 L 350 305 C 350 308 353 310 356 310 L 444 310 C 447 310 450 308 450 305 L 460 280 Z" class="pot" />
+    <ellipse cx="400" cy="280" rx="60" ry="10" class="pot" />
+    <ellipse cx="400" cy="280" rx="56" ry="8" class="soil" />
+    <ellipse cx="400" cy="281" rx="45" ry="5" class="soil-top" />
+  </g>
+
+  <!-- Growing Plant Assembly -->
+  <g class="sway-group">
+    <!-- Main Stem -->
+    <path d="M 400 280 C 395 230, 410 170, 400 85" class="stem" fill="none" />
+
+    <!-- Leaves -->
+    <path d="M 390 210 C 360 200, 340 215, 335 225 C 355 235, 380 225, 390 210 Z" class="leaf leaf-left-1" />
+    <path d="M 410 180 C 440 170, 460 185, 465 195 C 445 205, 420 195, 410 180 Z" class="leaf leaf-right-1" />
+    <path d="M 395 130 C 370 115, 350 130, 345 140 C 365 150, 385 142, 395 130 Z" class="leaf leaf-left-2" />
+
+    <!-- Flower Blossom / Growing Bud -->
+    <g class="flower">
+      <!-- Petals -->
+      <circle cx="400" cy="73" r="10" fill="var(--flower)" opacity="0.9" />
+      <circle cx="388" cy="85" r="10" fill="var(--flower)" opacity="0.9" />
+      <circle cx="412" cy="85" r="10" fill="var(--flower)" opacity="0.9" />
+      <circle cx="392" cy="97" r="10" fill="var(--flower)" opacity="0.9" />
+      <circle cx="408" cy="97" r="10" fill="var(--flower)" opacity="0.9" />
+      <!-- Center -->
+      <circle cx="400" cy="85" r="9" fill="#f2e05a" />
+    </g>
+  </g>
+</svg>
