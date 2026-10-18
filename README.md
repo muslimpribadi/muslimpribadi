@@ -8,21 +8,11 @@
 
 ---
 
-<!-- Two Column Layout -->
-<table>
- <tr>
-   <th width="50%">
-     
-  ### 🪴 THE GARDEN OF CRAFT
+<img src="./plant.svg" alt="Growing Plant Animation" width="100%" />
+
+### 🪴 THE GARDEN OF CRAFT
 
   > *"When I'm away from the keyboard, you'll find me out in the garden."*
-
-   </th>
-   <th width="50%">
-     <img src="./plant.svg" alt="Growing Plant Animation" width="100%" />
-   </th>
- </tr>
-</table>
 
 ---
 
